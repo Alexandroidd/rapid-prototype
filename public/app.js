@@ -14,7 +14,8 @@ function routeStuff($routeProvider){
 		controller: 'PrototypeController'
 	})
 	.when('/bangin', {
-		template: '<h1>THIS IS WHERE BANGIN EMOTICONS GO</h1'
+		templateUrl: '/templates/banginTemplate.html',
+		controller: 'PrototypeController'
 	});
 }
 
@@ -22,17 +23,32 @@ PrototypeController.$inject = ['$http'];
 function PrototypeController($http){
 	var vm = this;
 	vm.hello = "YO WUDUP WE GON DO THIS";
-	vm.all = [];
-	vm.getEmoticons = getEmoticons;
+	vm.allCool = [];
+	vm.allBangin = [];
+	vm.getCoolEmoticons = getCoolEmoticons;
+	vm.getBanginEmoticons = getBanginEmoticons;
 
-
-	getEmoticons();
-	function getEmoticons(){
+	//GET'S EMOTICONS W/STATUS 'COOL'//
+	getCoolEmoticons();
+	function getCoolEmoticons(){
 		$http
 		.get('http://localhost:3000/cool')
 		.then(function(response){
-			vm.all = response.data;
-			console.log(vm.all);
+			vm.allCool = response.data;
 		});
 	}
+
+	//GET'S EMOTICONS W/STATUS 'BANGIN'//
+	getBanginEmoticons();
+	function getBanginEmoticons(){
+		$http
+		.get('http://localhost:3000/bangin')
+		.then(function(response){
+			vm.allBangin = response.data;
+		});
+
+	}
+
+
+
 }

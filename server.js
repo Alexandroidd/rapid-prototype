@@ -20,10 +20,17 @@ app.get('/api', function(req,res){
 	});
 });
 
-//SHOW ROUTE FOR BANGIN//
-app.get('/cool', function(req, res){
+//SHOW ROUTE FOR COOL//
+app.get('/cool', function getCoolEmoticons(req, res){
 	db.Emoticon.find({'status': 'cool'}, function(err, emoticons){
 		console.log('this is working');
+		res.json(emoticons);
+	});
+});
+
+//SHOW ROUTE FOR BANGIN//
+app.get('/bangin', function getBanginEmoticons(req,res){
+	db.Emoticon.find({'status': 'bangin'}, function(err,emoticons){
 		res.json(emoticons);
 	});
 });
