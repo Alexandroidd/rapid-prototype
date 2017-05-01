@@ -14,7 +14,7 @@ function routeStuff($routeProvider){
 	})
 	.when('/bangin', {
 		template: '<h1>THIS IS WHERE BANGIN EMOTICONS GO</h1'
-	});
+	});;;;
 }
 
 
