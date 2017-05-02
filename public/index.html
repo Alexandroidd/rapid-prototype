@@ -9,12 +9,14 @@
 </head>
 
 <body>
-	{{hello}}
+	<h2>{{hello}}</h2>
 	<section ng-controller='PrototypeController as proto'>
-		<b>{{proto.hello}}</b>
+		<div id='title'><b>{{proto.hello}}</b></div>
+		
 		<a href='#!/'>Home</a>
 		<a href='#!/cool'>Cool Emoticons</a>
-		<a href='#!/bangin'>Bangin' Emoticons</a>
+		<a href='#!/bangin'>Bangin' Emoticons</a></div>
+
 		<ng-view></ng-view>
 	</section>
 

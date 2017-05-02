@@ -7,7 +7,7 @@ routeStuff.$inject = ['$routeProvider'];
 function routeStuff($routeProvider){
 	$routeProvider
 	.when('/', {
-		template:'<h1>THIS IS A TEST THIS IS A HUGE TEST</h1>'
+		template:'<h1>HEY THERE WELCOME TO THE EMOTICON PARTY WANNA JOIN? (ツ)_/¯</h1>'
 	})
 	.when('/cool', {
 		templateUrl: '/templates/coolTemplate.html',
@@ -22,7 +22,7 @@ function routeStuff($routeProvider){
 PrototypeController.$inject = ['$http'];
 function PrototypeController($http){
 	var vm = this;
-	vm.hello = "YO WUDUP WE GON DO THIS";
+	vm.hello = "THE EMOTICON PARTY PLACE";
 	//***************//
 	//COOL__FUNCTIONS//
 	//***************//
@@ -36,7 +36,10 @@ function PrototypeController($http){
 	//BANGIN__FUNCTIONS//
 	//*****************//
 	vm.allBangin = [];
+	vm.newBanginEmoticon = {};
 	vm.getBanginEmoticons = getBanginEmoticons;
+	vm.addBanginEmoticon = addBanginEmoticon;
+	
 	
 
 
@@ -70,6 +73,16 @@ function PrototypeController($http){
 			vm.allCool.push(response.data);
 		});
 		vm.newCoolEmoticon = {};
+	}
+
+	//POST BANGIN EMOTICON//
+	function addBanginEmoticon(){
+		$http
+		.post('http://localhost:3000/bangin', vm.newBanginEmoticon)
+		.then(function(response){
+			vm.allBangin.push(response.data);
+		});
+		vm.newBanginEmoticon = {};
 	}
 
 

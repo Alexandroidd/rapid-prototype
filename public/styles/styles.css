@@ -1,3 +1,53 @@
+#title {
+	display: inline-block;
+}
+
+/*#buttonSubmit{
+	size: ;
+}*/
+
+#nav {
+	display: inline-block;
+	position: relative;
+	right: 100px;
+}
+#shrug{
+	font-size:  60px;
+}
+
+a {
+	position: reltive;
+	text-decoration: none;
+}
+
 li {
 	font-size: 40px;
+	padding: 20px;
+}
+
+ul {
+	list-style: none;
+	text-align: center;
+	font-weight: bold;
+}
+
+#coolEmo {
+	padding: 10px;
+	font: arial;
+	font-weight: bold;
+}
+
+form {
+	text-align: center;
+}
+
+#newCool-name, #newCool-image, #newBangin-name, #newBangin-image {
+	padding: 20px;
+	border-radius: 10px;
+	font-size: 20px;
+
+}
+
+body{
+	background-color: beige;
 }

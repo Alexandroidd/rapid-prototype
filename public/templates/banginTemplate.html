@@ -1,9 +1,25 @@
 <section ng-controller='PrototypeController as proto'>
 {{proto.hello}}
 
+<form id='banginEmo' ng-submit='proto.addBanginEmoticon()'>
+	<div>
+		<label for='newBangin-image'>
+		Emoticon Image:</label>
+		<input type='text' id='newBangin-image' ng-model='proto.newBanginEmoticon.image' placeholder='Enter a new Emoticon here!'>
+		<br>
+		<label for='newBangin-name'>
+		Emoticon Name:</label>
+		<input type='text' id='newBangin-name' ng-model='proto.newBanginEmoticon.name' placeholder='Enter new Emoticon name here!'>
+		<br>
+	</div>
+	<div>
+		<input type='submit' id='banginButton' value='Add Emoticon'>
+</form>
+
+
 <ul ng-repeat='emoticon in proto.allBangin'>
 	<li>{{emoticon.image}}<br>
 		{{emoticon.name}}</li>
 </ul>
-<h1>testing testing</h1>
+
 </section>
