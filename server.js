@@ -64,6 +64,16 @@ app.post('/bangin', function makeBanginEmoticon(req,res){
 	});
 });
 
+//DELETE ROUTE FOR ALL//
+app.delete('/delete/:id', function deleteEmoticon(req,res){
+	let status;
+	db.Emoticon.findOne({_id: req.params.id}, function find(err, emoticonToDelete){
+		status = emoticonToDelete.status;
+		db.Emoticon.remove(emoticonToDelete, function destory(err, destroyedOne){
+			res.json(status);
+		});
+	});
+});
 
 
 

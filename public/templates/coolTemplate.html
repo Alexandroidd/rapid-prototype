@@ -1,6 +1,5 @@
 <section>
-{{proto.hello}}
-
+<br><br><br>
 <form id='coolEmo' ng-submit='proto.addCoolEmoticon()'>
 	<div>
 		<label for='newCool-image'>
@@ -18,8 +17,11 @@
 
 
 <ul ng-repeat='emoticon in proto.allCool'>
-	<li>{{emoticon.image}}<br>
-		{{emoticon.name}}</li>
+	<form id='coolDelete' ng-submit='proto.deleteEmoticon(emoticon._id)'>
+		<li>{{emoticon.image}}<br>
+		<br>
+		{{emoticon.name}}<input type='submit' id='deleteButton' value='X'></li>
+	</form>
 </ul>
 <h1>made by AC</h1>
 </section>

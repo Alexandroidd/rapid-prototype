@@ -7,7 +7,7 @@ routeStuff.$inject = ['$routeProvider'];
 function routeStuff($routeProvider){
 	$routeProvider
 	.when('/', {
-		template:'<h1>HEY THERE WELCOME TO THE EMOTICON PARTY WANNA JOIN? (ツ)_/¯</h1>'
+		templateUrl: '/templates/homeTemplate.html'
 	})
 	.when('/cool', {
 		templateUrl: '/templates/coolTemplate.html',
@@ -23,6 +23,9 @@ PrototypeController.$inject = ['$http'];
 function PrototypeController($http){
 	var vm = this;
 	vm.hello = "THE EMOTICON PARTY PLACE";
+	vm.deleteEmoticon = deleteEmoticon;
+
+
 	//***************//
 	//COOL__FUNCTIONS//
 	//***************//
@@ -30,6 +33,7 @@ function PrototypeController($http){
 	vm.newCoolEmoticon = {};
 	vm.getCoolEmoticons = getCoolEmoticons;
 	vm.addCoolEmoticon = addCoolEmoticon;
+
 
 	
 	//*****************//
@@ -83,6 +87,19 @@ function PrototypeController($http){
 			vm.allBangin.push(response.data);
 		});
 		vm.newBanginEmoticon = {};
+	}
+
+	//DELETE EMOTICONS//
+	function deleteEmoticon(id){
+		$http
+		.delete('http://localhost:3000/delete/' + id)
+		.then(function(response){
+				if(response.data == 'cool'){
+					vm.getCoolEmoticons();
+			} else if(response.data == 'bangin'){
+					vm.getBanginEmoticons();
+			}
+		});
 	}
 
 

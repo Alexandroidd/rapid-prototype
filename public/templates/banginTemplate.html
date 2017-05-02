@@ -1,5 +1,5 @@
 <section ng-controller='PrototypeController as proto'>
-{{proto.hello}}
+<br><br><br>
 
 <form id='banginEmo' ng-submit='proto.addBanginEmoticon()'>
 	<div>
@@ -18,8 +18,11 @@
 
 
 <ul ng-repeat='emoticon in proto.allBangin'>
+	<form id='banginDelete' ng-submit='proto.deleteEmoticon(emoticon._id)'>
 	<li>{{emoticon.image}}<br>
-		{{emoticon.name}}</li>
+		{{emoticon.name}}<input type='submit' id='deleteButton' value='X'></li>
+	</form>
+
 </ul>
 
 </section>

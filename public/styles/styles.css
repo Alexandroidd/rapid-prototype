@@ -1,5 +1,6 @@
 #title {
 	display: inline-block;
+	font-size: 20px;
 }
 
 /*#buttonSubmit{
@@ -8,16 +9,21 @@
 
 #nav {
 	display: inline-block;
-	position: relative;
-	right: 100px;
+	
 }
 #shrug{
 	font-size:  60px;
 }
 
+#deleteButton {
+	margin-left: 10px;
+}
+
 a {
-	position: reltive;
-	text-decoration: none;
+	font-size: 30px;
+	color: black;
+	padding: 5px;
+	text-decoration-style: wavy;
 }
 
 li {
@@ -29,6 +35,30 @@ ul {
 	list-style: none;
 	text-align: center;
 	font-weight: bold;
+}
+
+h3{
+	transform: rotate(10deg);
+	position: relative;
+	left: 50px;
+	top: 100px;
+	font-size: 100px;
+}
+
+h4{
+	transform: rotate(40deg);
+	position: relative;
+	left: 400px;
+	top: -120px;
+	font-size: 90px;
+}
+
+h5 {
+	text-align: center;
+	font-size: 40px;
+	position: absolute;
+
+
 }
 
 #coolEmo {
