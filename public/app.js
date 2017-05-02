@@ -23,10 +23,23 @@ PrototypeController.$inject = ['$http'];
 function PrototypeController($http){
 	var vm = this;
 	vm.hello = "YO WUDUP WE GON DO THIS";
+	//***************//
+	//COOL__FUNCTIONS//
+	//***************//
 	vm.allCool = [];
-	vm.allBangin = [];
+	vm.newCoolEmoticon = {};
 	vm.getCoolEmoticons = getCoolEmoticons;
+	vm.addCoolEmoticon = addCoolEmoticon;
+
+	
+	//*****************//
+	//BANGIN__FUNCTIONS//
+	//*****************//
+	vm.allBangin = [];
 	vm.getBanginEmoticons = getBanginEmoticons;
+	
+
+
 
 	//GET'S EMOTICONS W/STATUS 'COOL'//
 	getCoolEmoticons();
@@ -46,7 +59,17 @@ function PrototypeController($http){
 		.then(function(response){
 			vm.allBangin = response.data;
 		});
+	}
 
+	//POST COOL EMOTICON//
+	
+	function addCoolEmoticon(){
+		$http
+		.post('http://localhost:3000/cool', vm.newCoolEmoticon)
+		.then(function(response){
+			vm.allCool.push(response.data);
+		});
+		vm.newCoolEmoticon = {};
 	}
 
 

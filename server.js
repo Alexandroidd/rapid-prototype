@@ -35,6 +35,20 @@ app.get('/bangin', function getBanginEmoticons(req,res){
 	});
 });
 
+//POST ROUTE FOR BANGIN//
+app.post('/cool', function makeCoolEmoticon(req,res){
+	var newEmoticon = new db.Emoticon({
+		image: req.body.image,
+		name: req.body.name,
+		status: 'cool'
+	});
+	console.log(newEmoticon);
+	newEmoticon.save(function(err, emoticon){
+		if(err){return console.log('save error ' + err);}
+		res.json(emoticon);
+	});
+});
+
 
 
 
