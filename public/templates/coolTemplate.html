@@ -18,8 +18,7 @@
 
 <ul ng-repeat='emoticon in proto.allCool'>
 	<form id='coolDelete' ng-submit='proto.deleteEmoticon(emoticon._id)'>
-		<li>{{emoticon.image}}<br>
-		<br>
+		<li><span class='anEmoji'>{{emoticon.image}}</span>    
 		{{emoticon.name}}<input type='submit' id='deleteButton' value='X'></li>
 	</form>
 </ul>

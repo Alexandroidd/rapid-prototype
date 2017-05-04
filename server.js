@@ -73,6 +73,7 @@ app.delete('/delete/:id', function deleteEmoticon(req,res){
 			res.json(status);
 		});
 	});
+
 });
 
 
