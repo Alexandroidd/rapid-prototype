@@ -2,14 +2,16 @@
   "name": "rapid-prototype",
   "version": "1.0.0",
   "description": "![house](https://cloud.githubusercontent.com/assets/7833470/12465814/e9ae781e-bf84-11e5-8de0-6a1d952e5fda.gif)",
-  "main": "app.js",
+  "main": "seed.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.7"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
-  },
-  "engines": {
-    "node": "7.9.0",
-    "npm": "4.5.0"
   },
   "repository": {
     "type": "git",
@@ -21,10 +23,5 @@
   "bugs": {
     "url": "https://github.com/Alexandroidd/rapid-prototype/issues"
   },
-  "homepage": "https://github.com/Alexandroidd/rapid-prototype#readme",
-  "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "mongoose": "^4.9.7"
-  }
+  "homepage": "https://github.com/Alexandroidd/rapid-prototype#readme"
 }

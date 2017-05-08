@@ -81,6 +81,6 @@ app.delete('/delete/:id', function deleteEmoticon(req,res){
 
 
 //Start Server//
-app.listen(port, function(){
+app.listen(process.env.PORT || 3000, function(){
 	console.log('Server starting on, ' + port);
 });
