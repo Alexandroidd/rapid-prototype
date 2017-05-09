@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='RapidPrototype'>
+<html >
 <head>
 	<script src='bower_components/angular/angular.min.js'></script>
 	<script src='bower_components/angular-route/angular-route.min.js'></script>
@@ -8,7 +8,7 @@
 	<title>Emoticon Party </title>
 </head>
 
-<body>
+<body ng-app='RapidPrototype'>
 	<h2>{{hello}}</h2>
 	<section ng-controller='PrototypeController as proto'>
 		<div id='title'><b>{{proto.hello}}</b></div>
