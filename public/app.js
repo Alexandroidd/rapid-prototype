@@ -52,7 +52,7 @@ function PrototypeController($http){
 	getCoolEmoticons();
 	function getCoolEmoticons(){
 		$http
-		.get('http://localhost:3000/cool')
+		.get('/cool')
 		.then(function(response){
 			vm.allCool = response.data;
 		});
@@ -82,7 +82,7 @@ function PrototypeController($http){
 	//POST BANGIN EMOTICON//
 	function addBanginEmoticon(){
 		$http
-		.post('http://localhost:3000/bangin', vm.newBanginEmoticon)
+		.post('/bangin', vm.newBanginEmoticon)
 		.then(function(response){
 			vm.allBangin.push(response.data);
 		});
@@ -92,7 +92,7 @@ function PrototypeController($http){
 	//DELETE EMOTICONS//
 	function deleteEmoticon(id){
 		$http
-		.delete('http://localhost:3000/delete/' + id)
+		.delete('/delete/' + id)
 		.then(function(response){
 				if(response.data == 'cool'){
 					vm.getCoolEmoticons();
