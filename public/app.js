@@ -62,7 +62,7 @@ function PrototypeController($http){
 	getBanginEmoticons();
 	function getBanginEmoticons(){
 		$http
-		.get('http://localhost:3000/bangin')
+		.get('/bangin')
 		.then(function(response){
 			vm.allBangin = response.data;
 		});
@@ -72,7 +72,7 @@ function PrototypeController($http){
 	
 	function addCoolEmoticon(){
 		$http
-		.post('http://localhost:3000/cool', vm.newCoolEmoticon)
+		.post('/cool', vm.newCoolEmoticon)
 		.then(function(response){
 			vm.allCool.push(response.data);
 		});
